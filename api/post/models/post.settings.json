@@ -1,0 +1,101 @@
+{
+  "kind": "collectionType",
+  "collectionName": "posts",
+  "info": {
+    "name": "post",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "private": false,
+      "required": true,
+      "maxLength": 99,
+      "minLength": 3
+    },
+    "body": {
+      "type": "richtext",
+      "minLength": 3
+    },
+    "cover": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "gallery": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "categories": {
+      "collection": "category",
+      "via": "posts",
+      "dominant": true
+    },
+    "views": {
+      "type": "integer",
+      "default": 0
+    },
+    "like": {
+      "type": "integer",
+      "min": 0,
+      "default": 0
+    },
+    "love": {
+      "type": "integer",
+      "min": 0,
+      "default": 0
+    },
+    "haha": {
+      "type": "integer",
+      "min": 0,
+      "default": 0
+    },
+    "sad": {
+      "type": "integer",
+      "min": 0,
+      "default": 0
+    },
+    "angry": {
+      "type": "integer",
+      "min": 0,
+      "default": 0
+    },
+    "wow": {
+      "type": "integer",
+      "min": 0,
+      "default": 0
+    },
+    "care": {
+      "type": "integer",
+      "min": 0,
+      "default": 0
+    },
+    "reactions": {
+      "type": "integer",
+      "min": 0,
+      "default": 0
+    },
+    "admin_user": {
+      "plugin": "admin",
+      "model": "user"
+    }
+  }
+}
