@@ -45,8 +45,8 @@
       "required": false
     },
     "categories": {
-      "collection": "category",
       "via": "posts",
+      "collection": "category",
       "dominant": true
     },
     "views": {
@@ -93,9 +93,26 @@
       "min": 0,
       "default": 0
     },
-    "admin_user": {
-      "plugin": "admin",
+    "uploader": {
+      "plugin": "users-permissions",
       "model": "user"
+    },
+    "comments": {
+      "collection": "comment",
+      "via": "post"
+    },
+    "totalComments": {
+      "type": "integer",
+      "default": 0,
+      "min": 0
+    },
+    "rec": {
+      "plugin": "users-permissions",
+      "collection": "user"
+    },
+    "editor_choice": {
+      "via": "post",
+      "model": "editor-choice"
     }
   }
 }

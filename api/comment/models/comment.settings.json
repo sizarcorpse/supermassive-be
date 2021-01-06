@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "comments",
+  "info": {
+    "name": "comment"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "commenterName": {
+      "type": "string",
+      "required": true,
+      "maxLength": 50
+    },
+    "commentBody": {
+      "type": "text",
+      "required": true,
+      "maxLength": 500
+    },
+    "commenterEmail": {
+      "type": "email",
+      "required": true,
+      "maxLength": 50
+    },
+    "commenterWebsite": {
+      "type": "string",
+      "maxLength": 30
+    },
+    "post": {
+      "via": "comments",
+      "model": "post"
+    },
+    "isApproved": {
+      "type": "boolean",
+      "default": false
+    },
+    "isBlocked": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

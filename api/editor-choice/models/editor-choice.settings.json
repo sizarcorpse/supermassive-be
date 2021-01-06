@@ -1,0 +1,19 @@
+{
+  "kind": "collectionType",
+  "collectionName": "editor_choices",
+  "info": {
+    "name": "editorChoice",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "post": {
+      "model": "post",
+      "via": "editor_choice"
+    }
+  }
+}
