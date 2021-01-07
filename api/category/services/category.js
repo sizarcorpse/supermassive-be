@@ -7,25 +7,13 @@
 
 module.exports = {
   async find(params, populate) {
-    const ap = await strapi.query("category").find(params, [
+    const item = await strapi.query("category").findOne(params, [
       {
         path: "posts",
         populate: { path: "categories uploader" },
       },
     ]);
-    return ap.map((a) => {
-      return a.posts;
-    });
-  },
-  async findOne(params, populate) {
-    const ap = await strapi.query("category").findOne(params, [
-      {
-        path: "posts",
-        populate: { path: "categories uploader" },
-      },
-    ]);
-    return ap.map((a) => {
-      return a.posts;
-    });
+
+    return item;
   },
 };

@@ -47,6 +47,15 @@
       "config": {
         "policies": []
       }
+    },
+    {
+      "method": "PATCH",
+      "path": "/posts/:id/:reaction",
+      "handler": "post.reaction",
+      "config": {
+        "policies": []
+      }
     }
+    
   ]
 }
