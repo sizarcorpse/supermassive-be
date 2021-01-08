@@ -16,4 +16,11 @@ module.exports = {
 
     return `Post ${params.reaction}`;
   },
+  async viewInc(params, data, { files } = {}) {
+    await strapi
+      .query("post")
+      .update({ _id: params.id }, { $inc: { views: +1 } });
+
+    return `viewed`;
+  },
 };
